@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fa" dir="rtl" class="h-full">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260707-05-f6eb95b"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NazFilm</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/8650958800d6c92a.element_sdk.js" integrity="sha512-zFMhEG5W24TdVhhc4yw+K4kKrl6mClLz7Nz7OlZcKY64bZTx26LpVI6mwMCarQMzfrHe8i4fBMu4fxoFej2m9g=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+  html, body { height: 100%; margin: 0; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Vazirmatn', sans-serif; letter-spacing: -0.3px; }
+
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 40px rgba(255,70,85,0.4), 0 0 80px rgba(255,70,85,0.2); }
+    50% { box-shadow: 0 0 60px rgba(255,70,85,0.6), 0 0 100px rgba(255,70,85,0.3); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes pulse-border {
+    0%, 100% { border-color: rgba(255,70,85,0.3); }
+    50% { border-color: rgba(255,70,85,0.8); }
+  }
+
+  .anim-fade-up { animation: fadeUp 0.7s ease-out forwards; }
+  .anim-fade-in { animation: fadeIn 0.6s ease forwards; }
+  .anim-scale-in { animation: scaleIn 0.6s ease forwards; }
+  .anim-slide-right { animation: slideRight 0.7s ease-out forwards; }
+
+  .card-hover { transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; }
+  .card-hover:hover { 
+    transform: translateY(-16px) scale(1.05); 
+    box-shadow: 0 30px 60px rgba(255,70,85,0.35), 0 10px 40px rgba(255,70,85,0.15);
+    filter: brightness(1.1);
+  }
+
+  .btn-pulse { animation: glow 3s ease-in-out infinite; }
+
+  .hero-slide { transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
+
+  .glass {
+    background: rgba(10,10,26,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .accent-gradient {
+    background: linear-gradient(135deg, #ff4655, #dc2626);
+  }
+
+  .premium-text {
+    background: linear-gradient(135deg, #ff4655 0%, #ffa500 50%, #ff4655 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-premium {
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-premium::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(50%, 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .btn-premium:hover::before {
+    opacity: 1;
+  }
+
+  .input-focus {
+    transition: all 0.3s ease;
+  }
+
+  .input-focus:focus {
+    border-color: #ff4655 !important;
+    box-shadow: 0 0 30px rgba(255,70,85,0.3), inset 0 0 15px rgba(255,70,85,0.1) !important;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+  }
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/0179d719c431a79e.data_sdk.js" type="text/javascript" integrity="sha512-OsRvJkI5GkC3MJQcgotQYotpzrMSX415GiKKgvYdxQEEkzD/fdchShO2FMSy0PJr/tiINMXOk5Vl2zAgg6bUiA=="></script>
+ </head>
+ <body class="h-full overflow-auto" style="background:#0a0a1a; color:#e2e8f0;">
+  <div id="app-wrapper" class="w-full h-full">
+   <!-- MENU DROPDOWN -->
+   <div id="menu-dropdown" class="fixed inset-0 z-40 bg-black/50 transition-opacity" style="display:none; opacity:0; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);" onclick="toggleMenu()"></div>
+   <div id="menu-panel" class="fixed right-0 top-0 h-full w-72 glass z-40 overflow-auto transition-transform" style="display:none; transform: translateX(100%); border-left: 1px solid rgba(255,255,255,0.12);">
+    <div class="p-6">
+     <button onclick="toggleMenu()" class="p-2 rounded-full hover:bg-white/15 transition-colors mb-6 float-left"> <i data-lucide="x" style="width:20px;height:20px;"></i> </button>
+     <div class="clear-both text-2xl font-black mb-8" style="color:#ff4655;">
+      NAZFILM
+     </div><!-- Menu Items -->
+     <nav class="space-y-4 mb-8">
+      <button onclick="showCountries(); toggleMenu();" class="w-full text-right py-3 px-4 rounded-xl hover:bg-white/10 transition-all flex items-center gap-3 font-semibold"> <span>🌍 کشورها</span> </button> <button onclick="showCategoriesMenu(); toggleMenu();" class="w-full text-right py-3 px-4 rounded-xl hover:bg-white/10 transition-all flex items-center gap-3 font-semibold"> <span>🎬 دسته‌بندی</span> </button> <button onclick="goProfile(); toggleMenu();" class="w-full text-right py-3 px-4 rounded-xl hover:bg-white/10 transition-all flex items-center gap-3 font-semibold"> <span>👤 حساب کاربری</span> </button>
+     </nav>
+     <hr style="border-color: rgba(255,255,255,0.1);" class="my-6"><!-- Three Dots Menu -->
+     <div class="space-y-3">
+      <button onclick="toggleMoreMenu()" class="w-full text-right py-3 px-4 rounded-xl hover:bg-white/10 transition-all flex items-center gap-3 font-semibold"> <i data-lucide="more-vertical" style="width:18px;height:18px;"></i> <span>بیشتر</span> </button>
+      <div id="more-menu" style="display:none; padding-top: 10px;">
+       <button onclick="showInfo('about'); toggleMenu();" class="w-full text-right py-2 px-4 rounded-lg text-sm hover:bg-white/10 transition-all">درباره ما</button> <button onclick="showInfo('contact'); toggleMenu();" class="w-full text-right py-2 px-4 rounded-lg text-sm hover:bg-white/10 transition-all">تماس با ما</button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="login-screen" class="w-full h-full flex flex-col items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0f0a25 100%);">
+    <!-- Premium gradient backgrounds -->
+    <div class="absolute top-20 right-10 w-96 h-96 rounded-full opacity-30" style="background:radial-gradient(circle, #ff4655, transparent); filter:blur(100px);"></div>
+    <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full opacity-25" style="background:radial-gradient(circle, #ffa500, transparent); filter:blur(120px);"></div>
+    <div class="absolute top-1/2 left-1/3 w-64 h-64 rounded-full opacity-15" style="background:radial-gradient(circle, #7c3aed, transparent); filter:blur(100px);"></div>
+    <div class="anim-scale-in text-center z-10 px-6">
+     <div id="login-logo" class="text-7xl font-black tracking-wider mb-4" style="color:#ff4655; text-shadow: 0 0 50px rgba(255,70,85,0.5), 0 4px 30px rgba(255,70,85,0.3); letter-spacing: 2px;">
+      NAZFILM
+     </div>
+     <div id="login-tagline" class="text-sm opacity-70 mb-16 tracking-wide font-medium" style="letter-spacing: 0.5px;">
+      آرشیف فیلم و سریال جهان و افغانستان
+     </div>
+     <div class="w-96 mx-auto">
+      <div class="relative mb-6">
+       <input id="phone-input" type="tel" placeholder="شماره تلفن" class="w-full px-6 py-4 rounded-2xl border-2 text-white text-right focus:outline-none transition-all input-focus" style="background:rgba(255,255,255,0.06); font-size:15px; border-color: rgba(255,255,255,0.15); font-weight: 500;">
+      </div>
+      <div class="relative mb-6">
+       <input id="name-input" type="text" placeholder="نام کاربری (اختیاری)" class="w-full px-6 py-4 rounded-2xl border-2 text-white text-right focus:outline-none transition-all input-focus" style="background:rgba(255,255,255,0.06); font-size:15px; border-color: rgba(255,255,255,0.15); font-weight: 500;">
+      </div><button onclick="doLogin()" class="w-full py-4 rounded-2xl font-bold text-white mb-4 transition-all btn-premium" style="background:linear-gradient(135deg, #ff4655, #dc2626); animation: glow 3s ease-in-out infinite; font-size: 15px; position: relative; z-index: 1;"> ثبت نام / ورود </button> <button onclick="doGuestLogin()" class="w-full py-4 rounded-2xl font-semibold transition-all hover:scale-105 active:scale-95 border-2" style="background:rgba(255,255,255,0.08); color:#e2e8f0; border-color: rgba(255,255,255,0.25); font-size: 15px;"> ورود مهمان </button>
+     </div>
+    </div>
+   </div><!-- HOME SCREEN -->
+   <div id="home-screen" class="w-full h-full overflow-auto hide-scrollbar" style="display:none;">
+    <!-- HEADER -->
+    <header class="glass sticky top-0 z-50 px-6 py-4 flex items-center justify-between" style="border-bottom: 1px solid rgba(255,255,255,0.12);">
+     <div class="flex items-center gap-8">
+      <div class="flex items-center gap-3">
+       <button onclick="toggleMenu()" class="p-3 rounded-full hover:bg-white/15 transition-colors hover:scale-110"> <i data-lucide="menu" style="width:20px;height:20px;"></i> </button>
+       <div id="header-logo" class="text-xl font-black tracking-wider" style="color:#ff4655; letter-spacing: 1px;">
+        NAZ
+       </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm">
+       <button class="nav-tab px-4 py-2 rounded-full transition-all font-semibold" data-tab="all" onclick="switchTab('all')" style="font-size: 14px;">همه</button> <button class="nav-tab px-4 py-2 rounded-full transition-all font-semibold" data-tab="films" onclick="switchTab('films')" style="font-size: 14px;">فیلم‌ها</button> <button class="nav-tab px-4 py-2 rounded-full transition-all font-semibold" data-tab="series" onclick="switchTab('series')" style="font-size: 14px;">سریال‌ها</button> <button class="nav-tab px-4 py-2 rounded-full transition-all font-semibold" data-tab="animation" onclick="switchTab('animation')" style="font-size: 14px;">انیمیشن</button>
+      </nav>
+     </div>
+     <div class="flex items-center gap-5">
+      <button onclick="toggleSearch()" class="p-3 rounded-full hover:bg-white/15 transition-colors hover:scale-110"> <i data-lucide="search" style="width:20px;height:20px;"></i> </button>
+     </div>
+    </header><!-- SEARCH BAR -->
+    <div id="search-bar" class="px-5 py-0 overflow-hidden transition-all" style="max-height:0; opacity:0;">
+     <input id="search-input" type="text" placeholder="جستجوی فیلم، سریال..." class="w-full px-5 py-3 rounded-2xl border border-white/15 text-white text-right focus:outline-none focus:border-red-500 transition-all mt-2.5 mb-3 focus:shadow-lg" style="background:rgba(255,255,255,0.07); font-size:14px;" oninput="filterMovies()">
+    </div><!-- HERO SLIDER -->
+    <div class="relative overflow-hidden" style="height:55%;">
+     <div id="hero-slider" class="relative w-full h-full">
+      <!-- Slides rendered by JS -->
+     </div>
+     <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top, #0a0a1a 0%, transparent 50%);"></div>
+     <div id="hero-content" class="absolute bottom-12 right-6 left-6 anim-slide-right">
+      <div class="flex items-center gap-4 mb-4">
+       <span class="px-4 py-1.5 rounded-full text-xs font-black tracking-widest" style="background:linear-gradient(135deg, #ff4655, #dc2626);">🔴 جدید</span> <span id="hero-rating" class="flex items-center gap-1.5 text-yellow-400 text-sm font-bold"> <i data-lucide="star" style="width:16px;height:16px;fill:currentColor;"></i> <span style="font-size: 16px;">8.4</span> </span>
+      </div>
+      <h2 id="hero-title" class="text-4xl font-black mb-3 tracking-tight" style="line-height: 1.1;">Avengers: Endgame</h2>
+      <p id="hero-desc" class="text-sm opacity-60 mb-8 max-w-xs leading-relaxed font-medium">اکشن • ۲۰۱۹ • ۳ ساعت</p>
+      <div class="flex gap-4">
+       <button class="flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-white transition-all btn-premium" style="background:linear-gradient(135deg, #ff4655, #dc2626); box-shadow: 0 0 30px rgba(255,70,85,0.4); font-size: 15px;"> <i data-lucide="play" style="width:20px;height:20px;fill:white;"></i> تماشا </button> <button class="flex items-center justify-center gap-2 px-5 py-4 rounded-2xl transition-all hover:scale-110 border-2 font-semibold" style="background:rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);"> <i data-lucide="plus" style="width:20px;height:20px;"></i> </button>
+      </div>
+     </div><!-- Slider dots -->
+     <div id="slider-dots" class="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-10"></div>
+    </div><!-- CATEGORIES -->
+    <div class="px-4 py-4">
+     <div class="flex gap-2 overflow-x-auto hide-scrollbar">
+      <button class="cat-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all" data-cat="all" onclick="filterCat('all')">🎬 همه</button> <button class="cat-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all" data-cat="films" onclick="filterCat('films')">🎥 فیلم‌ها</button> <button class="cat-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all" data-cat="series" onclick="filterCat('series')">📺 سریال‌ها</button> <button class="cat-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all" data-cat="animation" onclick="filterCat('animation')">✨ انیمیشن</button> <button class="cat-btn flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all" data-cat="family" onclick="filterCat('family')">👨‍👩‍👧 خانوادگی</button>
+     </div>
+    </div><!-- MOVIE SECTIONS -->
+    <div id="movie-sections">
+     <!-- Rendered by JS -->
+    </div><!-- SUBSCRIPTION SECTION -->
+    <div class="px-6 py-12 my-8">
+     <div class="text-center mb-10">
+      <h2 class="text-3xl font-black mb-3 tracking-tight">✨ اشتراک پریمیوم</h2>
+      <p class="text-sm opacity-60 font-medium">دسترسی نامحدود به تمام فیلم‌ها و سریال‌ها</p>
+     </div>
+    </div><!-- FOOTER -->
+    <footer class="text-center py-10 px-5 border-t border-white/5 mt-8" style="background:#060612;">
+     <div id="footer-logo" class="text-3xl font-black mb-4 tracking-wider" style="color:#ff4655;">
+      NAZFILM
+     </div>
+     <div class="flex justify-center gap-5 mb-5">
+      <a href="${contactInfo.telegram}" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full hover:bg-white/10 transition-colors hover:scale-110" title="تلگرام"><i data-lucide="send" style="width:20px;height:20px;"></i></a> <a href="${contactInfo.whatsapp}" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full hover:bg-white/10 transition-colors hover:scale-110" title="واتس‌اپ"><i data-lucide="message-circle" style="width:20px;height:20px;"></i></a> <a href="${contactInfo.youtube}" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full hover:bg-white/10 transition-colors hover:scale-110" title="یوتیوب"><i data-lucide="youtube" style="width:20px;height:20px;"></i></a> <a href="mailto:${contactInfo.email}" class="p-3 rounded-full hover:bg-white/10 transition-colors hover:scale-110" title="ایمیل"><i data-lucide="mail" style="width:20px;height:20px;"></i></a>
+     </div>
+     <p class="text-xs opacity-40 tracking-wide">© ۱۴۰۳ نازفیلم - تمامی حقوق محفوظ است</p>
+    </footer>
+   </div><!-- INFO SCREENS -->
+   <div id="info-screen" class="w-full h-full overflow-auto hide-scrollbar" style="display:none;">
+    <header class="glass sticky top-0 z-50 px-6 py-4 flex items-center justify-between" style="border-bottom: 1px solid rgba(255,255,255,0.12);">
+     <button onclick="goHome()" class="p-3 rounded-full hover:bg-white/15 transition-colors"> <i data-lucide="arrow-left" style="width:20px;height:20px;"></i> </button>
+     <div id="info-title" class="text-lg font-bold">
+      اطلاعات
+     </div>
+     <div class="w-10"></div>
+    </header>
+    <div id="info-content" class="px-6 py-8"></div>
+   </div>
+   <div id="profile-screen" class="w-full h-full overflow-auto hide-scrollbar" style="display:none;">
+    <!-- PROFILE HEADER -->
+    <header class="glass sticky top-0 z-50 px-6 py-4 flex items-center justify-between" style="border-bottom: 1px solid rgba(255,255,255,0.12);">
+     <button onclick="goHome()" class="p-3 rounded-full hover:bg-white/15 transition-colors"> <i data-lucide="arrow-left" style="width:20px;height:20px;"></i> </button>
+     <div class="text-lg font-bold">
+      حساب کاربری
+     </div>
+     <div class="w-10"></div>
+    </header><!-- PROFILE CONTENT -->
+    <div class="px-6 py-8">
+     <!-- User Info -->
+     <div class="mb-8 p-6 rounded-2xl" style="background:rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);">
+      <div class="flex items-center gap-4 mb-4">
+       <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold" style="background:linear-gradient(135deg, #ff4655, #ffa500);">
+        <i data-lucide="user" style="width:24px;height:24px;color:white;"></i>
+       </div>
+       <div class="flex-1">
+        <p class="text-sm opacity-70 mb-1">وضعیت حساب</p>
+        <p id="profile-status" class="text-lg font-bold">فعال ✓</p>
+       </div>
+      </div>
+      <div class="flex items-center gap-4 mt-4">
+       <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold" style="background:linear-gradient(135deg, #8b5cf6, #ff4655);">
+        <i data-lucide="phone" style="width:24px;height:24px;color:white;"></i>
+       </div>
+       <div class="flex-1">
+        <p class="text-sm opacity-70 mb-1">شماره تلفن</p>
+        <p id="profile-phone" class="text-lg font-bold">---</p>
+       </div>
+      </div>
+      <div class="flex items-center gap-4 mt-4">
+       <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold" style="background:linear-gradient(135deg, #16a34a, #22c55e);">
+        <i data-lucide="user-check" style="width:24px;height:24px;color:white;"></i>
+       </div>
+       <div class="flex-1">
+        <p class="text-sm opacity-70 mb-1">نام کاربری</p>
+        <p id="profile-name" class="text-lg font-bold">---</p>
+       </div>
+      </div>
+     </div><!-- Subscription Plans -->
+     <div class="mb-8">
+      <h2 class="text-2xl font-black mb-6 tracking-tight">✨ اشتراک پریمیوم</h2>
+      <div class="rounded-2xl p-6 border-2 transition-all hover:scale-105 cursor-pointer" style="background:linear-gradient(135deg, rgba(255,70,85,0.2), rgba(10,10,26,0.9)); border-color: #ff4655;" onclick="selectPlan('basic', 30)">
+       <h3 class="text-lg font-bold mb-2">📅 اشتراک ماهانه</h3>
+       <div class="text-4xl font-black mb-2" style="color:#ff4655;">
+        ۳۰ افغانی
+       </div>
+       <p class="text-sm opacity-70 mb-4 font-medium">دسترسی کامل به تمام فیلم‌ها و سریال‌ها برای یک ماه</p>
+       <ul class="text-xs opacity-70 space-y-2 mb-5 font-medium">
+        <li>✓ تماشای نامحدود</li>
+        <li>✓ کیفیت HD و 4K</li>
+        <li>✓ بدون تبلیغات</li>
+        <li>✓ دانلود و تماشای آفلاین</li>
+       </ul><button class="w-full py-4 rounded-xl font-bold tex
